@@ -1,5 +1,5 @@
 import { Breadcrumbs, Container, Grid } from "@mui/material";
-import Link from "next/link";
+import { Link } from "@/app/ui/Link";
 
 import SignInForm from "@/app/ui/sign-in-form";
 
