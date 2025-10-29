@@ -78,6 +78,15 @@ export default function SignIn({ state, formAction, pending, ...props }: SignInF
                                     variant="outlined"
                                     color={emailError ? 'error' : 'primary'}
                                     defaultValue={state?.values?.email}
+                                    slotProps={
+                                        {
+                                            input: {
+                                                sx: [emailError && {
+                                                    borderColor: theme.palette.error.main
+                                                }]
+                                            }
+                                        }
+                                    }
                                 />
                             </FormControl>
                             <FormControl>
@@ -90,12 +99,20 @@ export default function SignIn({ state, formAction, pending, ...props }: SignInF
                                     type="password"
                                     id="password"
                                     autoComplete="current-password"
-                                    autoFocus
                                     required
                                     fullWidth
                                     variant="outlined"
                                     color={passwordError ? 'error' : 'primary'}
                                     defaultValue={state?.values?.password}
+                                    slotProps={
+                                        {
+                                            input: {
+                                                sx: [passwordError && {
+                                                    borderColor: theme.palette.error.main
+                                                }]
+                                            }
+                                        }
+                                    }
                                 />
                             </FormControl>
                             <FormControlLabel
