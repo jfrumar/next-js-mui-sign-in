@@ -66,8 +66,6 @@ export async function validateSignIn(_: unknown, formData: FormData | null) {
         maxAge: 60 * 60, // 1 hour
     });
 
-
-
     return {
         success: true,
         values: formValues,
