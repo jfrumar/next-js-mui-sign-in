@@ -7,7 +7,16 @@ const signInSchema = z.object({
     password: z.string().min(6),
 });
 
-export async function validateSignIn(_: unknown, formData: FormData) {
+const initialState = {};
+
+
+export async function validateSignIn(_: unknown, formData: FormData | null) {
+    // await new Promise(r => setTimeout(r, 20000));
+
+    if (formData === null) {
+        return initialState;
+    }
+
     const formValues = {
         email: formData.get('email') as string,
         password: formData.get('password') as string,
@@ -22,10 +31,11 @@ export async function validateSignIn(_: unknown, formData: FormData) {
         };
     }
 
-    // Success
-    console.log(data);
+    // Passed validation
+    // TODO: Check the credentials
 
     return {
         success: true,
+        values: formValues,
     };
 }
