@@ -97,9 +97,6 @@ export default function SignIn(props: { disableCustomTheme?: boolean; }) {
           </Typography>
           <form action={formAction}>
             <Box
-              // component="form"
-              // onSubmit={handleSubmit}
-              // noValidate
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -150,8 +147,9 @@ export default function SignIn(props: { disableCustomTheme?: boolean; }) {
                 type="submit"
                 fullWidth
                 variant="contained"
+                disabled={pending}
               >
-                Sign in
+                {pending ? 'Signing in...' : 'Sign in'}
               </Button>
               <Link
                 component="button"

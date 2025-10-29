@@ -1,19 +1,19 @@
+import { Container } from '@mui/material';
 import clsx from 'clsx';
-import { Link } from '@/app/ui/Link';
 
 import styles from './home.module.css';
+import HomepageSignInLink from './ui/homepage-sign-in-link';
 
 export default function Home() {
-  return (
 
+
+  return (
     <div className={clsx(
       styles.home,
       'flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black')}>
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <div>
-          <Link href="/sign-in">Sign In</Link>
-        </div>
-      </main>
+      <Container>
+        <HomepageSignInLink />
+      </Container>
     </div>
   );
 }
